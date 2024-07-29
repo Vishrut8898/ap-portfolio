@@ -163,11 +163,43 @@ main .compositing-reel .wrapper h2 {
   text-transform: uppercase;
   font-size: 44px;
 }
-main .compositing-reel .wrapper figure {
+main .compositing-reel .wrapper .ap-reel-tabs {
+  margin-top: 30px;
+  list-style: none;
+  border-bottom: 1px solid #dcdcdc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .compositing-reel .wrapper .ap-reel-tabs .ap-reel-tab {
+  padding: 8px 18px;
+  color: #000;
+  font-size: 15px;
+}
+main .compositing-reel .wrapper .ap-reel-tabs .ap-reel-tab:hover {
+  color: #666;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+main .compositing-reel .wrapper .ap-reel-tabs .ap-reel-tab.active {
+  background-color: #fec503;
+  color: #fff;
+}
+main .compositing-reel .wrapper .ap-reel-tab-items {
+  width: 100%;
+  list-style-type: none;
+}
+main .compositing-reel .wrapper .ap-reel-tab-items .ap-reel-tab-item {
+  display: none;
+}
+main .compositing-reel .wrapper .ap-reel-tab-items .ap-reel-tab-item.active {
+  display: block;
+}
+main .compositing-reel .wrapper .ap-reel-tab-items .ap-reel-tab-item.active figure {
   width: 100%;
   margin-top: 4%;
 }
-main .compositing-reel .wrapper figure video {
+main .compositing-reel .wrapper .ap-reel-tab-items .ap-reel-tab-item.active figure video {
   width: 100%;
 }
 main .compositing-shots {

@@ -20,7 +20,21 @@ $(document).ready(function () {
     if($(window).innerWidth() <= 768) {
       $('nav').slideToggle('500')
     }
-  })
+  });
+
+  // Logic to change tabs for commmposite reels
+  $(".ap-reel-tab").each((index, tab) => {
+    $(tab).click((e) => {
+        e.preventDefault();
+        $(".ap-reel-tab-item.active video").trigger('pause');
+        // Update active tab
+        $(".ap-reel-tab.active").removeClass('active');
+        $(".ap-reel-tab").eq(index).addClass('active');
+        // Update active tab item
+        $(".ap-reel-tab-item.active").removeClass('active');
+        $(".ap-reel-tab-item").eq(index).addClass('active');
+    });
+  });
 
   // Logic for opening shots modal
   $('.compositing-shots li figure').click((e) => {

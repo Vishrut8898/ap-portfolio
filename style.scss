@@ -181,11 +181,47 @@ main {
                 font-size: 44px;
             }
 
-            figure {
-                width: 100%;
-                margin-top: 4%;
+            .ap-reel-tabs {
+                margin-top: 30px;
+                list-style: none;
+                border-bottom: 1px solid #dcdcdc;
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
-                video { width: 100%; }
+                .ap-reel-tab {
+                    padding: 10px 18px;
+                    color: #000;
+                    font-size: 18px;
+
+                    &:hover {
+                        color: #666;
+                        transition: .3s ease-in-out;
+                        cursor: pointer;
+                    }
+
+                    &.active {
+                        background-color: #fec503;
+                        color: #fff;
+                    }
+                }
+            }
+
+            .ap-reel-tab-items {
+                width: 100%;
+                list-style-type: none;
+                .ap-reel-tab-item {
+                    display: none;
+                    &.active {
+                        display: block;
+                        figure {
+                            width: 100%;
+                            margin-top: 4%;
+            
+                            video { width: 100%; }
+                        }
+                    }
+                }
             }
         }
     }
