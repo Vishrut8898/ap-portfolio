@@ -26,7 +26,7 @@ header {
     left: 0;
     right: 0;
     background-color: transparent;
-    transition: .4s ease;
+    transition: .2s ease;
     z-index: 20;
 
     &.header-bg {
@@ -57,36 +57,36 @@ header {
 
         .hamburger { display: none; }
 
-        nav ul {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            
-
-            li {
-                list-style: none;
-
-                &.active a {
-                    border-radius: 2px;
-                    background-color: #fec503;
-                    font-weight: 600;
-
-                    &:hover { color: #fff; }
-                }
-
-                a {
-                    padding: 6px 12px;
-                    font-size: 18px;
-                    color: #fff;
-                    text-decoration: none;
-                    letter-spacing: .5px;
-                    text-transform: uppercase;
-                    transition: .3s ease-in-out;
-
-                    &:hover {
-                        color: #fed136;
-                        cursor: pointer;
+        nav {
+            ul {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+                li {
+                    list-style: none;
+    
+                    &.active a {
+                        border-radius: 2px;
+                        background-color: #fec503;
+                        font-weight: 600;
+    
+                        &:hover { color: #fff; }
+                    }
+    
+                    a {
+                        padding: 6px 12px;
+                        font-size: 18px;
+                        color: #fff;
+                        text-decoration: none;
+                        letter-spacing: .5px;
+                        text-transform: uppercase;
+                        transition: .3s ease-in-out;
+    
+                        &:hover {
+                            color: #fed136;
+                            cursor: pointer;
+                        }
                     }
                 }
             }
@@ -129,6 +129,7 @@ main {
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            text-align: center;
             z-index: 10;
 
             h2 {
@@ -749,7 +750,11 @@ footer {
 }
 
 @media only screen and (max-width: 995px) {
-    header .wrapper { width: 95%; }
+    header .wrapper {
+        width: 100%;
+        padding: 10px;
+    }
+
     main {
         .compositing-shots .wrapper ul li{
             flex-basis: 70%;
@@ -775,10 +780,11 @@ footer {
 
     header {
         .wrapper {
+            border-bottom: 5px solid #4e4e4e;
             h1 a { font-size: 24px; }
 
             .hamburger {
-                display: block;
+                display: initial;
                 i {
                     color: #fff;
                     font-size: 20px;
@@ -788,15 +794,15 @@ footer {
 
             nav {
                 display: none;
+                border-top: 5px solid #4e4e4e;
+                border-bottom: 5px solid #4e4e4e;
                 position: fixed;
-                top: 55px;
+                top: 67px;
                 right: 0;
                 left: 0;
                 background-color: #222;
 
                 ul {
-                    padding: 3% 0;
-                    border-top: 2px solid #4e4e4e;
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
@@ -823,6 +829,9 @@ footer {
                             }
                         }
                     }
+
+                    li:first-child { margin-top: 0; }
+                    li:last-child { margin-bottom: 0; }
                 }
             }
         }
@@ -861,6 +870,14 @@ footer {
                     div {
                         padding: 4px 10px;
                         h3 { font-size: 14px; }
+                    }
+
+                    figure:hover {
+                        &::after,
+                        &::before {
+                            content: '';
+                            display: none;
+                        }
                     }
                 }
             }

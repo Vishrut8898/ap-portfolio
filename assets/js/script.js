@@ -94,11 +94,15 @@ $(document).ready(function () {
   });
 
   // Logic to add bg color to header on certain scroll
-  $(document).scroll(() => {
-    if($(window).scrollTop() >= 200) {
-      $('header').addClass('header-bg');
-    } else {
-      $('header').removeClass('header-bg');
-    }
-  })
+  if ($(window)[0].innerWidth <= 768) {
+    $('header').addClass('header-bg');
+  } else  {
+    $(document).scroll(() => {
+      if($(window).scrollTop() >= 100) {
+        $('header').addClass('header-bg');
+      } else {
+        $('header').removeClass('header-bg');
+      }
+    })
+  }
 });
